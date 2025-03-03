@@ -1,15 +1,21 @@
 import connectToDB from "../../config/databaseConfig"
 
-const insertIntoDB = async (table: string, columns: string[], values: string[]) => {
+interface tableValues { [column: string]: object | string }
+
+const insertIntoDB = async (table: string, columns: string[], values: tableValues[]) => {
   const databaseInstance = await connectToDB();
 
   try {
     databaseInstance.exec("BEGIN TRANSACTION");
 
     const columnValues = columns.map(() => "?").join(",");
-    const insertDataSQL = `INSERT INTO ${table} (${columns.join(',')}) VALUES ${columnValues}`;
+    const insertDataSQL = `INSERT INTO ${table} (${columns.join(',')}) VALUES (${columnValues})`;
 
-    databaseInstance.prepare(insertDataSQL).run(values);
+    for (const value of values) {
+      const valuesArray = columns.map((column) => value[column]);
+      databaseInstance.prepare(insertDataSQL).run(...valuesArray);
+    }
+
     databaseInstance.exec("COMMIT");
     
   } catch (error) {
