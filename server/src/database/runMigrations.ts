@@ -3,8 +3,10 @@ import path from "path";
 import connectToDB from "../config/databaseConfig";
 
 const executeMigrations = async () => {
+  const databaseInstance = await connectToDB();
+
   try {
-    const databaseInstance = await connectToDB();
+    databaseInstance.exec("BEGIN TRANSACTION");
 
     const createMigrationTableSQL = `CREATE TABLE IF NOT EXISTS "migrations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT, "name" TEXT UNIQUE NOT NULL, "applied_at" INTEGER NOT NULL);`;
     databaseInstance.exec(createMigrationTableSQL);
@@ -30,7 +32,10 @@ const executeMigrations = async () => {
       }
     }
 
+    databaseInstance.exec("COMMIT")
+
   } catch (error) {
+    databaseInstance.exec("ROLLBACK");  
     console.error(`Failed to execute migrations: ${error}`);
     throw new Error('Failed to execute migrations');
   }
