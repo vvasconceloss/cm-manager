@@ -1,0 +1,142 @@
+[
+  {
+    "idCoach": 1,
+    "name": "Mikel Arteta",
+    "nationality": "Spanish",
+    "currentClub": 1,
+    "isUser": 0
+  },
+  {
+    "idCoach": 2,
+    "name": "Unai Emery",
+    "nationality": "Spanish",
+    "currentClub": 2,
+    "isUser": 0
+  },
+  {
+    "idCoach": 3,
+    "name": "Andoni Iraola",
+    "nationality": "Spanish",
+    "currentClub": 3,
+    "isUser": 0
+  },
+  {
+    "idCoach": 4,
+    "name": "Thomas Frank",
+    "nationality": "Danish",
+    "currentClub": 4,
+    "isUser": 0
+  },
+  {
+    "idCoach": 5,
+    "name": "Fabian Hürzeler",
+    "nationality": "German",
+    "currentClub": 5,
+    "isUser": 0
+  },
+  {
+    "idCoach": 6,
+    "name": "Enzo Maresca",
+    "nationality": "Italian",
+    "currentClub": 6,
+    "isUser": 0
+  },
+  {
+    "idCoach": 7,
+    "name": "Oliver Glasner",
+    "nationality": "Austrian",
+    "currentClub": 7,
+    "isUser": 0
+  },
+  {
+    "idCoach": 8,
+    "name": "David Moyes",
+    "nationality": "Scottish",
+    "currentClub": 8,
+    "isUser": 0
+  },
+  {
+    "idCoach": 9,
+    "name": "Marco Silva",
+    "nationality": "Portuguese",
+    "currentClub": 9,
+    "isUser": 0
+  },
+  {
+    "idCoach": 10,
+    "name": "Kieran McKenna",
+    "nationality": "Northern Irish",
+    "currentClub": 10,
+    "isUser": 0
+  },
+  {
+    "idCoach": 11,
+    "name": "Ruud van Nistelrooy",
+    "nationality": "Dutch",
+    "currentClub": 11,
+    "isUser": 0
+  },
+  {
+    "idCoach": 12,
+    "name": "Arne Slot",
+    "nationality": "Dutch",
+    "currentClub": 12,
+    "isUser": 0
+  },
+  {
+    "idCoach": 13,
+    "name": "Pep Guardiola",
+    "nationality": "Spanish",
+    "currentClub": 13,
+    "isUser": 0
+  },
+  {
+    "idCoach": 14,
+    "name": "Ruben Amorim",
+    "nationality": "Portuguese",
+    "currentClub": 14,
+    "isUser": 0
+  },
+  {
+    "idCoach": 15,
+    "name": "Eddie Howe",
+    "nationality": "English",
+    "currentClub": 15,
+    "isUser": 0
+  },
+  {
+    "idCoach": 16,
+    "name": "Nuno Espirito Santo",
+    "nationality": "Portuguese",
+    "currentClub": 16,
+    "isUser": 0
+  },
+  {
+    "idCoach": 17,
+    "name": "Ivan Juric",
+    "nationality": "Croatian",
+    "currentClub": 17,
+    "isUser": 0
+  },
+  {
+    "idCoach": 18,
+    "name": "Ange Postecoglou",
+    "nationality": "Greek",
+    "currentClub": 18,
+    "isUser": 0
+  },
+  {
+    "idCoach": 19,
+    "name": "Graham Potter",
+    "nationality": "English",
+    "currentClub": 19,
+    "isUser": 0
+  },
+  {
+    "idCoach": 20,
+    "name": "Vitor Pereira",
+    "nationality": "Portuguese",
+    "currentClub": 20,
+    "isUser": 0
+  }
+]

@@ -1,0 +1,142 @@
+[
+  {
+    "idStadium": 1,
+    "name": "Emirates Stadium",
+    "capacity": 60704,
+    "location": "London",
+    "yearBuilt": 2006
+  },
+  {
+    "idStadium": 2,
+    "name": "Villa Park",
+    "capacity": 42640,
+    "location": "Birmingham",
+    "yearBuilt": 1897
+  },
+  {
+    "idStadium": 3,
+    "name": "Vitality Stadium",
+    "capacity": 11307,
+    "location": "Bournemouth",
+    "yearBuilt": 1910
+  },
+  {
+    "idStadium": 4,
+    "name": "Gtech Community Stadium",
+    "capacity": 17250,
+    "location": "Brentford",
+    "yearBuilt": 2020
+  },
+  {
+    "idStadium": 5,
+    "name": "American Express Stadium",
+    "capacity": 31876,
+    "location": "Falmer",
+    "yearBuilt": 2011
+  },
+  {
+    "idStadium": 6,
+    "name": "Stamford BridStadiumge",
+    "capacity": 40341,
+    "location": "London",
+    "yearBuilt": 1877
+  },
+  {
+    "idStadium": 7,
+    "name": "Selhurst Park",
+    "capacity": 25486,
+    "location": "London",
+    "yearBuilt": 1924
+  },
+  {
+    "idStadium": 8,
+    "name": "Goodison Park",
+    "capacity": 39572,
+    "location": "Liverpool",
+    "yearBuilt": 1892 
+  },
+  {
+    "idStadium": 9,
+    "name": "Craven Cottage",
+    "capacity": 29589,
+    "location": "London",
+    "yearBuilt": 1896
+  },
+  {
+    "idStadium": 10,
+    "name": "Portman Road",
+    "capacity": 30311,
+    "location": "Ipswich",
+    "yearBuilt": 1884
+  },
+  {
+    "idStadium": 11,
+    "name": "King Power Stadium",
+    "capacity": 32261,
+    "location": "Leicester",
+    "yearBuilt": 2002
+  },
+  {
+    "idStadium": 12,
+    "name": "Anfield",
+    "capacity": 61276,
+    "location": "Liverpool",
+    "yearBuilt": 1884
+  },
+  {
+    "idStadium": 13,
+    "name": "Etihad Stadium",
+    "capacity": 53400,
+    "location": "Manchester",
+    "yearBuilt": 2002 
+  },
+  {
+    "idStadium": 14,
+    "name": "Old Trafford",
+    "capacity": 74310,
+    "location": "Manchester",
+    "yearBuilt": 1910
+  },
+  {
+    "idStadium": 15,
+    "name": "St. James' Park",
+    "capacity": 52000,
+    "location": "Newcastle",
+    "yearBuilt": 1880
+  },
+  {
+    "idStadium": 16,
+    "name": "The City Ground",
+    "capacity": 30445,
+    "location": "Nottingham",
+    "yearBuilt": 1898
+  },
+  {
+    "idStadium": 17,
+    "name": "St Mary's Stadium",
+    "capacity": 32384,
+    "location": "Southampton",
+    "yearBuilt": 2001
+  },
+  {
+    "idStadium": 18,
+    "name": "Tottenham Hotspur Stadium",
+    "capacity": 62850,
+    "location": "London",
+    "yearBuilt": 2019 
+  },
+  {
+    "idStadium": 19,
+    "name": "London Stadium",
+    "capacity": 68013,
+    "location": "London",
+    "yearBuilt": 2011
+  },
+  {
+    "idStadium": 20,
+    "name": "Molineux Stadium",
+    "capacity": 32050,
+    "location": "Wolverhampton",
+    "yearBuilt": 1889
+  }
+]

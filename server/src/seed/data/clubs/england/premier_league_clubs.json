@@ -1,0 +1,202 @@
+[
+  {
+    "idClub": 1,
+    "name": "Arsenal",
+    "nickname": "The Gunners",
+    "founded": 1886,
+    "reputation": 930,
+    "idCountry": 4,
+    "logo": "",
+    "idStadium": 1
+  },
+  {
+    "idClub": 2,
+    "name": "Aston Villa",
+    "nickname": "The Villans",
+    "founded": 1874,
+    "reputation": 750,
+    "idCountry": 4,
+    "logo": "",
+    "idStadium": 2
+  },
+  {
+    "idClub": 3,
+    "name": "Bournemouth",
+    "nickname": "The Cherries",
+    "founded": 1899,
+    "reputation": 550,
+    "idCountry": 4,
+    "logo": "",
+    "idStadium": 3
+  },
+  {
+    "idClub": 4,
+    "name": "Brentford",
+    "nickname": "The Bees",
+    "founded": 1889,
+    "reputation": 600,
+    "idCountry": 4,
+    "logo": "",
+    "idStadium": 4
+  },
+  {
+    "idClub": 5,
+    "name": "Brighton",
+    "nickname": "The Seagulls",
+    "founded": 1901,
+    "reputation": 650,
+    "idCountry": 4,
+    "logo": "",
+    "idStadium": 5
+  },
+  {
+    "idClub": 6,
+    "name": "Chelsea",
+    "nickname": "The blues",
+    "reputation": 880,
+    "founded": 1905,
+    "idCountry": 4,
+    "logo": "",
+    "idStadium": 6
+  },
+  {
+    "idClub": 7,
+    "name": "Crystal Palace",
+    "nickname": "The Glaziers",
+    "reputation": 650,
+    "founded": 1861,
+    "idCountry": 4,
+    "logo": "",
+    "idStadium": 7
+  },
+  {
+    "idClub": 8,
+    "name": "Everton",
+    "nickname": "The Toffees",
+    "reputation": 720,
+    "founded": 1878,
+    "idCountry": 4,
+    "logo": "",
+    "idStadium": 8
+  },
+  {
+    "idClub": 9,
+    "name": "Fulham",
+    "nickname": "The Cottagers",
+    "reputation": 930,
+    "founded": 1879,
+    "idCountry": 4,
+    "logo": "",
+    "idStadium": 9
+  },
+  {
+    "idClub": 10,
+    "name": "Ipswich Town",
+    "nickname": "The Blues",
+    "reputation": 450,
+    "founded": 1878,
+    "idCountry": 4,
+    "logo": "",
+    "idStadium": 10
+  },
+  {
+    "idClub": 11,
+    "name": "Leicester City",
+    "nickname": "The Foxes",
+    "reputation": 500,
+    "founded": 1884,
+    "idCountry": 4,
+    "logo": "",
+    "idStadium": 11
+  },
+  {
+    "idClub": 12,
+    "name": "Liverpool",
+    "nickname": "The Reds",
+    "reputation": 950,
+    "founded": 1892,
+    "idCountry": 4,
+    "logo": "",
+    "idStadium": 12
+  },
+  {
+    "idClub": 13,
+    "name": "Manchester City",
+    "nickname": "The Citizens",
+    "reputation": 1000,
+    "founded": 1887,
+    "idCountry": 4,
+    "logo": "",
+    "idStadium": 13
+  },
+  {
+    "idClub": 14,
+    "name": "Manchester United",
+    "nickname": "The Red Devils",
+    "reputation": 900,
+    "founded": 1878,
+    "idCountry": 4,
+    "logo": "",
+    "idStadium": 14
+  },
+  {
+    "idClub": 15,
+    "name": "Newcastle United",
+    "nickname": "The Magpies",
+    "reputation": 810,
+    "founded": 1892,
+    "idCountry": 4,
+    "logo": "",
+    "idStadium": 15
+  },
+  {
+    "idClub": 16,
+    "name": "Nottingham Forest",
+    "nickname": "The Garibaldis",
+    "reputation": 500,
+    "founded": 1865,
+    "idCountry": 4,
+    "logo": "",
+    "idStadium": 16
+  },
+  {
+    "idClub": 17,
+    "name": "Southampton",
+    "nickname": "The Saints",
+    "reputation": 400,
+    "founded": 1885,
+    "idCountry": 4,
+    "logo": "",
+    "idStadium": 17
+  },
+  {
+    "idClub": 18,
+    "name": "Tottenham Hotspur",
+    "nickname": "The Spurs",
+    "reputation": 850,
+    "founded": 1882,
+    "idCountry": 4,
+    "logo": "",
+    "idStadium": 18
+  },
+  {
+    "idClub": 19,
+    "name": "West Ham United",
+    "nickname": "The Irons",
+    "reputation": 780,
+    "founded": 1895,
+    "idCountry": 4,
+    "logo": "",
+    "idStadium": 19
+  },
+  {
+    "idClub": 20,
+    "name": "Wolverhampton Wanderers",
+    "nickname": "The Wolves",
+    "reputation": 600,
+    "founded": 1877,
+    "idCountry": 4,
+    "logo": "",
+    "idStadium": 20
+  }
+]

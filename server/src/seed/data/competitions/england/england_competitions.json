@@ -1,0 +1,26 @@
+[
+  {
+    "idCompetition": 1,
+    "idCountry": 4,
+    "name": "Premier League",
+    "type": "League",
+    "season": "2024/25",
+    "logo": ""
+  },
+  {
+    "idCompetition": 2,
+    "idCountry": 4,
+    "name": "FA Cup",
+    "type": "Cup",
+    "season": "2024/25",
+    "logo": ""
+  },
+  {
+    "idCompetition": 3,
+    "idCountry": 4,
+    "name": "EFL Cup",
+    "type": "Cup",
+    "season": "2024/25",
+    "logo": ""
+  }
+]
