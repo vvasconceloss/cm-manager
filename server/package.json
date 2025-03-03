@@ -4,7 +4,8 @@
   "description": "A server-side for a football manager project",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/index.ts"
+    "dev": "tsx watch src/index.ts",
+    "migrate": "ts-node ./src/database/runMigrations.ts"
   },
   "keywords": [
     "NodeJs",
