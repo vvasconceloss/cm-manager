@@ -1,11 +1,12 @@
+import { transliterate } from "transliteration";
 import { 
-  faker, fakerAR, fakerCS_CZ, fakerDE, fakerDE_CH, fakerEN, fakerEN_AU, fakerEN_GB, fakerEN_IN, fakerEN_US, 
+  Faker, faker, fakerAR, fakerCS_CZ, fakerDE, fakerDE_CH, fakerEN, fakerEN_AU, fakerEN_GB, fakerEN_IN, fakerEN_US, 
   fakerES, fakerES_MX, fakerFA, fakerFI, fakerFR, fakerHE, fakerHR, fakerHY, fakerIT, fakerJA, fakerKO, 
   fakerMK, fakerNE, fakerNL, fakerPL, fakerPT_BR, fakerPT_PT, fakerRO, fakerRU, fakerSK, fakerSR_RS_latin, 
   fakerUK, fakerVI, fakerZH_CN 
 } from "@faker-js/faker";
 
-const fakerLocales: { [key: string]: any } = {
+const fakerLocales: { [key: string]: Faker } = {
   "Argentina": fakerES, "France": fakerFR, "Spain": fakerES,
   "England": fakerEN_GB, "Brazil": fakerPT_BR, "Portugal": fakerPT_PT,
   "Netherlands": fakerNL, "Italy": fakerIT, "Germany": fakerDE,
@@ -39,4 +40,36 @@ const fakerLocales: { [key: string]: any } = {
   "Guyana": fakerEN, "Rwanda": fakerFR, "Gabon": fakerFR,
 };
 
+const playerPositions = ['GK', "CB", "LB", "RB", "CDM", "CM", "CAM", 'LW', 'RW', 'ST'];
+
 const getFakerByNationality = (nationality: string) => { return fakerLocales[nationality] || faker };
+
+const capitalizeName = (name: string) => { return name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLocaleLowerCase()).join(' ');}
+
+const createPlayerData = (fakerInstance: Faker) => {
+  const playerFirstName = fakerInstance.person.firstName("male");
+  const playerLastName = fakerInstance.person.lastName("male");
+
+  const playerBirthDate = fakerInstance.date.birthdate({ mode: 'age', min: 16, max: 40 });
+  const playerPosition = playerPositions[Math.floor(Math.random() * playerPositions.length)];
+
+  const playerMarketValue = Math.round(parseFloat((Math.random() * 100000000).toFixed(2)));
+  const playerMarketValueFormatted = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(playerMarketValue);
+
+  return { playerFirstName, playerLastName, playerPosition, playerMarketValueFormatted, playerBirthDate }
+}
+
+const produceRandomPlayer = (nationality: string) => {
+  const fakerInstance = getFakerByNationality(nationality);
+  const { playerFirstName, playerLastName, playerPosition, playerBirthDate, playerMarketValueFormatted } = createPlayerData(fakerInstance);
+
+  const firstName = capitalizeName(transliterate(playerFirstName));
+  const lastName = capitalizeName(transliterate(playerLastName));
+
+  const playerBirthYear = new Date(playerBirthDate).getFullYear();
+
+  const playerAge = new Date().getFullYear() - playerBirthYear;
+  const formattedBirthDate = new Date(playerBirthDate).toISOString().split('T')[0];
+}
+
+export default produceRandomPlayer;
