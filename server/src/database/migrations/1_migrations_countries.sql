@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS "country" (
 	"code"	TEXT,
 	"continent"	TEXT,
 	"ranking"	INTEGER,
+	"youth_rating" INTEGER,
 	"nationalTeam"	INTEGER,
 	PRIMARY KEY("idCountry")
 );

@@ -1,14 +1,16 @@
 CREATE TABLE IF NOT EXISTS "player" (
 	"idPlayer"	INTEGER NOT NULL,
 	"first_name"	TEXT,
-	"surname"	TEXT,
+	"last_name"	TEXT,
 	"full_name"	TEXT,
 	"birthDate"	TEXT,
 	"nationality"	TEXT,
-	"transferValue"	REAL,
+	"marketValue"	REAL,
 	"currentClub"	INTEGER,
 	"position" TEXT,
 	"age" INTEGER,
+  "CA" INTEGER,
+  "PA" INTEGER,
 	PRIMARY KEY("idPlayer" AUTOINCREMENT),
 	FOREIGN KEY("currentClub") REFERENCES "club"("idClub")
 );
