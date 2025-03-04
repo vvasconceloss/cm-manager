@@ -6,7 +6,7 @@ import loadJsonDataFile from "../../utils/seed/loadJsonData";
 
 const insertStadiumsDB = async (nation: string, league: string) => {
   const stadiums = loadJsonDataFile(path.join(__dirname, '../', '../', 'seed', 'data', 'stadiums', `${nation}`,`${league}_stadiums.json`));
-  await insertIntoDB('club', ["idClub", "name", "founded", "nickname", "reputation", "logo", "formation", "idStadium", "idCountry"], stadiums);
+  await insertIntoDB("stadium", ["idStadium", "name", "capacity", "location", "yearBuilt"], stadiums);
 }
 
 const insertClubsDB = async (nation: string, league: string) => {
@@ -20,7 +20,7 @@ const insertCoachesDB = async (nation: string, league: string) => {
 }
 
 const insertCompetitions = async (nation: string) => {
-  const englandCompetitions = loadJsonDataFile(path.join(__dirname, 'data', 'competitions', nation, `${nation}_competitions.json`));
+  const englandCompetitions = loadJsonDataFile(path.join(__dirname, '../', '../', 'seed', 'data', 'competitions', nation, `${nation}_competitions.json`));
   await insertIntoDB("competition", ["idCompetition", "idCountry", "name", "type", "season", "logo"], englandCompetitions);
 }
 
@@ -33,10 +33,10 @@ const seedDatabase = async () => {
       await insertIntoDB('country', ["idCountry", "name", "code", "continent", "ranking", "nationalTeam"], countries);
 
       //ENGLAND - PREMIER LEAGUE
-      insertStadiumsDB("england", "premier_league");
-      insertClubsDB("england", "premier_league");
-      insertCoachesDB("england", "premier_league");
-      insertCompetitions("england");
+      await insertStadiumsDB("england", "premier_league");
+      await insertClubsDB("england", "premier_league");
+      await insertCoachesDB("england", "premier_league");
+      await insertCompetitions("england");
 
       markSeedDone();
     }
@@ -46,4 +46,4 @@ const seedDatabase = async () => {
   }
 }
 
-export default seedDatabase;
+seedDatabase();
