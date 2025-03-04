@@ -2,6 +2,7 @@ import path from "path";
 import markSeedDone from "./markSeedStatus";
 import checkSeedDone from "./checkSeedStatus";
 import insertIntoDB from "../../utils/seed/databaseInsert";
+import insertPlayerLeague from "../player/insertPlayerClub";
 import loadJsonDataFile from "../../utils/seed/loadJsonData";
 
 const insertStadiumsDB = async (nation: string, league: string) => {
@@ -37,6 +38,7 @@ const seedDatabase = async () => {
       await insertClubsDB("england", "premier_league");
       await insertCoachesDB("england", "premier_league");
       await insertCompetitions("england");
+      await insertPlayerLeague("england", "premier_league");
 
       markSeedDone();
     }
