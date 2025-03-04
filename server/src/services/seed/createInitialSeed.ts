@@ -30,7 +30,7 @@ const seedDatabase = async () => {
   try {
     if (databaseAlreadySeeded.count === 0) {
       const countries = loadJsonDataFile(path.join(__dirname, '../', '../', 'seed', 'data', 'international', 'countries_data.json'));
-      await insertIntoDB('country', ["idCountry", "name", "code", "continent", "ranking", "nationalTeam"], countries);
+      await insertIntoDB('country', ["idCountry", "name", "code", "continent", "ranking", "nationalTeam", "youth_rating"], countries);
 
       //ENGLAND - PREMIER LEAGUE
       await insertStadiumsDB("england", "premier_league");
