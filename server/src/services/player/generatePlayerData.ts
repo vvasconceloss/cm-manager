@@ -1,10 +1,16 @@
-import { transliterate } from "transliteration";
 import { 
   Faker, faker, fakerAR, fakerCS_CZ, fakerDE, fakerDE_CH, fakerEN, fakerEN_AU, fakerEN_GB, fakerEN_IN, fakerEN_US, 
   fakerES, fakerES_MX, fakerFA, fakerFI, fakerFR, fakerHE, fakerHR, fakerHY, fakerIT, fakerJA, fakerKO, 
   fakerMK, fakerNE, fakerNL, fakerPL, fakerPT_BR, fakerPT_PT, fakerRO, fakerRU, fakerSK, fakerSR_RS_latin, 
   fakerUK, fakerVI, fakerZH_CN 
 } from "@faker-js/faker";
+import type Player from "../../types/player";
+import { transliterate } from "transliteration";
+import insertPlayerData from "./insertPlayerData";
+import type Attributes from "../../types/attributes";
+import createPlayerPA_CA from "./generatePlayerPA_CA";
+import insertPlayerAttributes from "./insertPlayerAttributes";
+import calculatePlayerAttributes from "./generatePlayerAttributes";
 
 const fakerLocales: { [key: string]: Faker } = {
   "Argentina": fakerES, "France": fakerFR, "Spain": fakerES,
@@ -40,8 +46,6 @@ const fakerLocales: { [key: string]: Faker } = {
   "Guyana": fakerEN, "Rwanda": fakerFR, "Gabon": fakerFR,
 };
 
-const playerPositions = ['GK', "CB", "LB", "RB", "CDM", "CM", "CAM", 'LW', 'RW', 'ST'];
-
 const getFakerByNationality = (nationality: string) => { return fakerLocales[nationality] || faker };
 
 const capitalizeName = (name: string) => { return name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLocaleLowerCase()).join(' ');}
@@ -51,17 +55,15 @@ const createPlayerData = (fakerInstance: Faker) => {
   const playerLastName = fakerInstance.person.lastName("male");
 
   const playerBirthDate = fakerInstance.date.birthdate({ mode: 'age', min: 16, max: 40 });
-  const playerPosition = playerPositions[Math.floor(Math.random() * playerPositions.length)];
 
   const playerMarketValue = Math.round(parseFloat((Math.random() * 100000000).toFixed(2)));
-  const playerMarketValueFormatted = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(playerMarketValue);
 
-  return { playerFirstName, playerLastName, playerPosition, playerMarketValueFormatted, playerBirthDate }
+  return { playerFirstName, playerLastName, playerMarketValue, playerBirthDate }
 }
 
-const produceRandomPlayer = (nationality: string) => {
+const produceRandomPlayer = async (currentClub: number, nationality: string, position: string) => {
   const fakerInstance = getFakerByNationality(nationality);
-  const { playerFirstName, playerLastName, playerPosition, playerBirthDate, playerMarketValueFormatted } = createPlayerData(fakerInstance);
+  const { playerFirstName, playerLastName, playerBirthDate, playerMarketValue } = createPlayerData(fakerInstance);
 
   const firstName = capitalizeName(transliterate(playerFirstName));
   const lastName = capitalizeName(transliterate(playerLastName));
@@ -70,6 +72,28 @@ const produceRandomPlayer = (nationality: string) => {
 
   const playerAge = new Date().getFullYear() - playerBirthYear;
   const formattedBirthDate = new Date(playerBirthDate).toISOString().split('T')[0];
+
+  const { currentAbility, potentialAbility } = await createPlayerPA_CA(nationality);
+  const playerAttributes = calculatePlayerAttributes(position, currentAbility);
+
+  const Player: Player = {
+    firstName: firstName, lastName: lastName, fullName: `${firstName} ${lastName}`,
+    birthDate: formattedBirthDate, nationality: nationality, marketValue: playerMarketValue,
+    currentClub: currentClub, position: position, age: playerAge, CA: currentAbility, PA: potentialAbility
+  }
+
+  const Attributes: Attributes = {
+    finishing: playerAttributes.finishing, crossing: playerAttributes.crossing, dribbling: playerAttributes.dribbling,
+    heading: playerAttributes.heading, tackling: playerAttributes.tackling, marking: playerAttributes.marking,
+    passing: playerAttributes.passing, free_kick: playerAttributes.free_kick, acceleration: playerAttributes.acceleration,
+    agility: playerAttributes.agility, strength: playerAttributes.strength, jumping: playerAttributes.jumping,
+    vision: playerAttributes.vision, decision: playerAttributes.decision, positioning: playerAttributes.positioning,
+    antecipation: playerAttributes.antecipation, aggression: playerAttributes.aggression, reflexes: playerAttributes.reflexes, 
+    handling: playerAttributes.handling, diving: playerAttributes.diving 
+  }
+
+  const idPlayer = await insertPlayerData(Player);
+  await insertPlayerAttributes(idPlayer, Attributes);
 }
 
 export default produceRandomPlayer;
