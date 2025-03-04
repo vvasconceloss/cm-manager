@@ -4,6 +4,7 @@ import checkSeedDone from "./checkSeedStatus";
 import insertIntoDB from "../../utils/seed/databaseInsert";
 import insertPlayerLeague from "../player/insertPlayerClub";
 import loadJsonDataFile from "../../utils/seed/loadJsonData";
+import { getGraphicsFolder, insertLogoImages } from "../../utils/seed/databaseInsertGraphics";
 
 const insertStadiumsDB = async (nation: string, league: string) => {
   const stadiums = loadJsonDataFile(path.join(__dirname, '../', '../', 'seed', 'data', 'stadiums', `${nation}`,`${league}_stadiums.json`));
@@ -26,6 +27,7 @@ const insertCompetitions = async (nation: string) => {
 }
 
 const seedDatabase = async () => {
+  const graphicsFolderPath = getGraphicsFolder();
   const databaseAlreadySeeded = await checkSeedDone();
 
   try {
@@ -39,6 +41,7 @@ const seedDatabase = async () => {
       await insertCoachesDB("england", "premier_league");
       await insertCompetitions("england");
       await insertPlayerLeague("england", "premier_league");
+      await insertLogoImages("england", graphicsFolderPath);
 
       markSeedDone();
     }
